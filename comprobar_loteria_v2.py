@@ -83,11 +83,34 @@ def main():
     # Dar la situación del sorteo
     print(f'{draw_status_message()}\n')
 
-    # Dar los premios para cada número
+    # Hacemos un primer recorrido inicial por los números:
     for n in lines:
       print(f'El décimo del número {n:05} tiene un premio de: {check_number(n):_}')
-    
     print()
+
+    # Mientras el estado del sorteo sea menos a 2 quiere decir que todavía pueden salir nuevos números,
+    # por lo que continuamos comprobando los resultados cada X tiempo
+    # Almacenamos en un array los números premiados (estos no será necesario consultarlos de nuevo)
+    winning_numbers = []
+    if draw_status() == 1:
+      print('El sorteo se está realizando. Iremos comprobando números e indicado los premiados a continuación:')
+
+    while draw_status() == 1 or len(winning_numbers) == len(lines):
+      # Dar los premios para cada número
+      for n in lines:
+        if not n in winning_numbers:
+          prize = check_number(n)
+          if prize > 0:
+            winning_numbers.append(n)
+            print(f'El décimo del número {n:05} tiene un premio de: {prize:_}')
+      print()
+      time.sleep(10)
+    
+    if len(winning_numbers) == len(lines):
+      print('¡Enhorabuena! El sorteo ha terminado y todos tus números han sido premiados. Aún así recuerda comprobarlos en la fuente oficial')
+    else:
+      print(f'El sorteo ha terminado y has conseguido {len(winning_numbers)} premios de {len(lines)} números')
+
     return 0
 
 

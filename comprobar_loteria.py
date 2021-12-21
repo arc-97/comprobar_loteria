@@ -51,7 +51,7 @@ def check_number(number):
 ########################################################
 def main():
     """Recibe una lista de números en un fichero, uno en cada línea, y devuelve el premio"""
-    
+
     if len(sys.argv) != 2:
         print('\nPor favor, introduzca el nombre de fichero con la lista de números.')
         print(sys.argv[0] + ' <fichero_con_numeros>\n')
@@ -65,7 +65,7 @@ def main():
     except FileNotFoundError:
         print(f'\nNo se encuentra el fichero {input_file}\n')
         return 1
-        
+
     try:
         lines = [int(x.strip()) for x in lines]
     except ValueError:

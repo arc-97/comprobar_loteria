@@ -5,7 +5,7 @@ Como ejemplo, incluye una lista de números para comprobar el uso.
 
 Para más información sobre dicho API, por favor, visite [su página de documentación](https://servicios.elpais.com/sorteos/loteria-navidad/api/ "API de El País").
 
-# Descargo de responsabilidad: 
+# Descargo de responsabilidad:
 > La **única lista oficial** contra la que hay que comprobar los resultados del sorteo de navidad es la que publica el Organismo Nacional de Loterías y Apuestas del Estado. El uso de este programa no implica la veracidad de los resultados. Haz un uso responsable del programa y de los resultados obtenidos.
 
 ## Preparación
@@ -19,5 +19,5 @@ Para más información sobre dicho API, por favor, visite [su página de documen
 1. Crear un fichero con la lista de números que se quieren comprobar, introduciendo solamente un número por línea. Se adjunta un fichero de ejemplo llamado ```numeros.txt``` para verificar.
 2. Ejecutar el programa python:
     ```shell
-    $> comprobar_lotería.py numeros.txt
+    $> python comprobar_loteria.py numeros.txt
     ```
